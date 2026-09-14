@@ -24,13 +24,13 @@ const registerSchema = z.strictObject({
     .min(8, { error: "Password must contain at least 8 characters" })
     .max(72, { error: "Password cannot exceed 72 characters" })
     .regex(/[a-z]/, {
-      error: "Password must contain a lowercase letter",
+        error: "Password must contain a lowercase letter",
     })
     .regex(/[A-Z]/, {
-      error: "Password must contain an uppercase letter",
+        error: "Password must contain an uppercase letter",
     })
     .regex(/[0-9]/, {
-      error: "Password must contain a number",
+        error: "Password must contain a number",
     }),
 });
 

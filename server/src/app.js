@@ -7,6 +7,7 @@ import pino from "pino";
 import pinoHttp from "pino-http";
 
 import { errorHandler, notFound } from "./middleware/errorMiddleware.js";
+import authRoutes from "./routes/authRoutes.js";
 import sendSuccess from "./utils/sendResponse.js";
 
 const app = express();
@@ -28,6 +29,8 @@ app.get("/api/health", (_request, response) => {
     message: "Server is healthy",
   });
 });
+
+app.use("/api/auth", authRoutes);
 
 // These must stay after every API route.
 app.use(notFound);
